@@ -74,20 +74,20 @@ public class hrms {
 
 	//Side Module // Role Management
 	
-	/*driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 	driver.findElement(By.linkText("Role Management")).click();
 	 WebElement AddRole = driver.findElement(By.xpath("//button[@class='ant-btn ant-btn-default ant-btn-lg custom_btn']"));
 	 AddRole.click();
 	 driver.switchTo().activeElement();
 	 WebElement ok = driver.findElement(By.xpath("//button[@type='button'][2]"));
 	 ok.click();
-	 System.out.println(driver.findElement(By.xpath("//div[text()='Please Enter Title']")).getText());*/
+	 System.out.println(driver.findElement(By.xpath("//div[text()='Please Enter Title']")).getText());
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
 		
 		//Search and Add Employee
 		driver.findElement(By.xpath("(//li[@role='menuitem'])[5]")).click();
-		/*driver.findElement(By.xpath("//button[@class='ant-btn ant-btn-default ant-btn-lg custom_btn']")).click();
+		driver.findElement(By.xpath("//button[@class='ant-btn ant-btn-default ant-btn-lg custom_btn']")).click();
 		
 		//Add Employee- Validations ( Click on Okay button)
 		Thread.sleep(2000);
@@ -132,24 +132,15 @@ public class hrms {
 		driver.findElement(By.id("temparory_address")).sendKeys("NA");
 		driver.findElement(By.id("birthdate")).sendKeys("22-12-2000");
 		driver.findElement(By.id("city")).sendKeys("Delhi");
-		driver.findElement(By.xpath("//span[text()='OK']")).click();*/
+		driver.findElement(By.xpath("//span[text()='OK']")).click();
 		
-		//Detail screen of Employee
-		//List<WebElement> Emp1 = driver.findElements(By.xpath("//td[@class='ant-table-cell']"));
-		//int Emp = Emp1.size();
-		
-		//System.out.print(Emp);
-		//for(int i=0; i< Emp1.size();i++);
+		//Detail Screen  of Employee
+		Actions a= new Actions(driver);
+		a.moveToElement(driver.findElement(By.xpath("(//*[@class='feather feather-more-vertical feather_icon'])[2]"))).build().perform();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[text()='Detail']")).click();
 		
 			
-			String store = driver.findElement(By.xpath("//span[text()='Rupal Shah']")).getText();
-			System.out.println(store);
-			Actions hover = new Actions(driver);
-			//Thread.sleep(2000);
-			hover.moveToElement(driver.findElement(By.xpath("//*[@class='feather feather-more-vertical feather_icon ant-popover-open']"))).build().perform();
-			//hover.moveToElement(driver.findElement(By.xpath("//*[@stroke ='currentColor']"))).click().build().perform();
-			driver.findElement(By.xpath("//*[text()='Detail']")).click();
-			System.out.print("Done");
 		}
 		
 		
